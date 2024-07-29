@@ -1,20 +1,7 @@
 'use strict';
 
 function makeArray(firstArray, secondArray, maxLength) {
-  let resultArray = [];
-
-  if (firstArray.length < maxLength) {
-    resultArray = firstArray;
-    for (let i = 0; i <= maxLength - firstArray.length; i++) {
-      resultArray.push(secondArray[i]);
-    }
-  } else {
-    for (let i = 0; i < maxLength; i++) {
-      resultArray.push(firstArray[i]);
-    }
-  }
-
-  return resultArray;
+  return firstArray.concat(secondArray).slice(0, maxLength);
 }
 
 console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)); // ["Mango", "Poly", "Ajax"]
